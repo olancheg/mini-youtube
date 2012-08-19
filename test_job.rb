@@ -17,8 +17,10 @@ class TestJob < Sinatra::Base
     include Helpers
   end
 
+  # load or build instance variable @video
   before %r{/video} do
     begin
+      # get id from request
       id = request.path_info.gsub(/\D/, '').to_i
 
       @video = if id > 0
@@ -27,6 +29,7 @@ class TestJob < Sinatra::Base
                  Video.new(params[:video])
                end
     rescue ActiveRecord::RecordNotFound
+      # if record not found - render 404
       not_found
     end
   end
