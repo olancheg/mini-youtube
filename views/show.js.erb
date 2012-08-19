@@ -1,0 +1,7 @@
+<% if @video.performed? %>
+  $('.video p').html('<%= video_player(@video).gsub("\n", "") %>');
+  clearInterval(window.update_fn);
+<% elsif @video.failed? %>
+  $('.video p').html('Обработка видео не удалась');
+  clearInterval(window.update_fn);
+<% end %>

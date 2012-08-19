@@ -32,7 +32,11 @@ class TestJob < Sinatra::Base
   end
 
   get %r{/video/\d+} do
-    haml :show
+    if request.xhr?
+      erb :'show.js', layout: false
+    else
+      haml :show
+    end
   end
 
   get '/video/new' do
@@ -43,7 +47,7 @@ class TestJob < Sinatra::Base
     @video.save
 
     if request.xhr?
-      erb :create, layout: false
+      erb :'create.js', layout: false
     else
       if @video.persisted?
         flash[:notice] = 'Запись успешно добавлена'

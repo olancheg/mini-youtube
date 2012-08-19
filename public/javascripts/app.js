@@ -18,11 +18,13 @@
     });
 
     // on video name change
-    $('.upload input[type=text]').change(function() {
-      if ($(this).attr('value') != "") {      // if value is not empty
-        $file_field.removeAttr('disabled');   // enable file input
-      } else {                                // otherwise
-        $file_field.attr('disabled', '');     // disable file input
+    $('.upload input[type=text]').keyup(function() {
+      var value = $.trim($(this).attr('value')); // trim value
+
+      if (value != "") {                         // if value is not empty
+        $file_field.removeAttr('disabled');      // enable file input
+      } else {                                   // otherwise
+        $file_field.attr('disabled', '');        // disable file input
       }
     });
 
