@@ -13,7 +13,7 @@ class VideoConverter
     sleep 1 # sidekiq is too fast, so we need to wait :)
 
     # fetch video
-    video = Video.find id rescue nil
+    video = Video.find_by_id id
     return unless video
 
     # trying transcode
