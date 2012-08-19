@@ -1,0 +1,12 @@
+%h2 Загрузить видео
+
+.files
+  %form{ method: :post, action: "/video", class: 'upload', enctype: 'multipart/form-data' }
+    %div
+      %label{ for: 'video_name' } Название:
+      %input{ id: 'video_name', type: :text, name: 'video[name]', value: @video.name, required: true }
+    %div
+      %label{ for: 'video_file' } Файл:
+      %input{ id: 'video_file', type: :file, name: 'video[file]', required: true, disabled: true, accept: "video/*" }
+    #progress
+      .bar{ style: "width: 0%;" }

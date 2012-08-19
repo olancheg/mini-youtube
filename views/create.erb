@@ -1,0 +1,5 @@
+<% if @video.persisted? %>
+  document.location = "/video/<%= @video.id %>";
+<% else %>
+  $('.flashes').html('<div class="flash">Невозможно сохранить запись</div>');
+<% end %>

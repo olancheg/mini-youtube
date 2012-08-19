@@ -1,0 +1,30 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %title Mini Youtube
+    %meta{ charset: 'utf-8' }
+    %link{ href: 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/ui-lightness/jquery-ui.css', media: 'all', rel: 'stylesheet' }
+    %link{ href: '/stylesheets/jquery.fileupload-ui.css', media: 'all', rel: 'stylesheet' }
+    %link{ href: '/stylesheets/style.css', media: 'all', rel: 'stylesheet' }
+  %body
+    #container
+      %header
+        %h1
+          %a{ href: '/' } Mini Youtube
+      #main
+        .flashes
+          - flashes.each do |hash|
+            %div{class: "flash #{hash.first}"}= hash.last
+        = yield
+      %footer
+        .copy
+          powered by
+          %a{ href: 'http://about.me/olancheg', target: :_blank } olancheg
+        .clear
+
+    %script{ src: '//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js' }
+    %script{ src: '//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js' }
+    %script{ src: '/javascripts/jquery.ui.widget.js' }
+    %script{ src: '/javascripts/jquery.iframe-transport.js' }
+    %script{ src: '/javascripts/jquery.fileupload.js' }
+    %script{ src: '/javascripts/app.js' }

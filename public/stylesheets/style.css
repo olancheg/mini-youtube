@@ -1,0 +1,89 @@
+* { padding: 0; margin: 0; }
+.clear { clear: both; }
+
+html {
+  background: #E9E9E9;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #f00;
+  text-decoration: none;
+}
+  a:hover {
+    color: #FF6468;
+    border-bottom: 1px #f00 solid;
+  }
+
+body {
+  background: #fff;
+  border-radius: 5px;
+  width: 640px;
+  margin: 20px auto;
+  border: 1px #ccc solid;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h1, h2 {
+  margin-bottom: 0.5em;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+input {
+  font-size: 1.5em;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+input[type=text] {
+  padding: 5px 10px;
+}
+
+input[type=text], input[type=file] {
+  display: inline-block;
+  width: 500px;
+}
+
+.videos a {
+  color: #00f;
+}
+
+  .videos .video {
+    margin-top: 5px;
+  }
+
+a.upload {
+  margin: 10px 0;
+  display: inline-block;
+}
+
+footer .copy {
+  float: right;
+}
+
+.flashes {
+  color: #f00;
+}
+
+/* progress bar */
+
+#progress {
+  width: 600px;
+  margin: auto;
+}
+
+.bar {
+  height: 18px;
+  background: #73E855;
+  border-radius: 20px;
+  box-shadow: inset #52A83D 0 0 10px 2px;
+}

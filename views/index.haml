@@ -1,0 +1,8 @@
+.videos
+  - for video in @videos do
+    .video
+      %a{href: "/video/#{video.id}"}
+        Видео ##{video.id}:
+        = video.name
+
+%a{ href: "/video/new", class: 'upload' } Загрузить

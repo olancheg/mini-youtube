@@ -1,0 +1,17 @@
+.video
+  %h1
+    = @video.name
+
+  - if @video.performed?
+    = video_player @video
+  - elsif @video.failed?
+    %p Обработка видео не удалась
+  - else
+    %p Идет процесс обработки видео, пожалуйста подождите
+    :javascript
+      setInterval(function() {
+        location.reload();
+      }, 5000);
+
+.actions
+  = link_to_video_delete @video.id if @video.performed? or @video.failed?
