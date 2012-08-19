@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'rake'
+
 gem 'sinatra'
 gem 'rack-flash3'
 gem 'haml'
