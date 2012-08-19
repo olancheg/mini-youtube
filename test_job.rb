@@ -22,10 +22,10 @@ class TestJob < Sinatra::Base
       id = request.path_info.gsub(/\D/, '').to_i
 
       @video = if id > 0
-        Video.find(id)
-      else
-        Video.new(params[:video])
-      end
+                 Video.find(id)
+               else
+                 Video.new(params[:video])
+               end
     rescue ActiveRecord::RecordNotFound
       not_found
     end
